@@ -1,7 +1,7 @@
 const {Router} = require('express')
 const router = Router()
-const {racine} = require('../controllers/ctrl')
+const {login,register} = require('../controllers/ctrl')
 
-router.get('/',racine)
-
+router.get('/',login)
+router.get('/register',register)
 module.exports = router

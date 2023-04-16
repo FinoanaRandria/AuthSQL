@@ -1,6 +1,12 @@
 
 /* get */
 
-exports.racine = (req,res)=>{
-    res.render('index')
+exports.login = (req,res)=>{
+    res.render('Login')
 }
+
+exports.register=(req,res) =>{
+
+    res.render('Register')
+}
+
