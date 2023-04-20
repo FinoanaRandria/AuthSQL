@@ -1,15 +1,19 @@
-const mysql = require('mysql');
+const mysql = require("mysql");
 
-const connection  = mysql.createConnection({
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "NodeTest",
+});
 
-    host:"localhost",
-    user: "root",
-    password :"",
-    database : "NodeTest"
-})
+con.connect((err) => {
+  if (err) throw err;
 
+  console.log("Connexion BD SQL reussie!");
+  con.query("SELECT * FROM user ", (err, result) => {
 
-connection.connect((err)=>{
-    if(err) throw err
-    console.log('Connection SQL reussie!');
-})
+    module.exports = JSON.stringify(result);
+    //console.log(result);
+  });
+});

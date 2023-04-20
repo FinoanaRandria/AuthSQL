@@ -1,12 +1,12 @@
+const result = JSON.parse(require('../models/db'));
 
-/* get */
+console.log(result);
 
-exports.login = (req,res)=>{
-    res.render('Login')
-}
 
-exports.register=(req,res) =>{
+exports.login = (req, res) => {
+  res.render("Login");
+};
 
-    res.render('Register')
-}
-
+exports.register = (req, res) => {
+  res.render("Register");
+};
