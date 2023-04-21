@@ -7,13 +7,33 @@ const con = mysql.createConnection({
   database: "NodeTest",
 });
 
+
+
+  con.query("SELECT * FROM user ", (err, result) => {
+
+        data = result
+       
+   }
+   
+ );
+
+
+
+
 con.connect((err) => {
   if (err) throw err;
 
   console.log("Connexion BD SQL reussie!");
-  con.query("SELECT * FROM user ", (err, result) => {
-
-    module.exports = JSON.stringify(result);
-    //console.log(result);
-  });
+ 
 });
+
+module.exports = {
+  
+  
+  
+
+
+
+
+
+}

@@ -1,6 +1,3 @@
-const result = JSON.parse(require('../models/db'));
-
-console.log(result);
 
 
 exports.login = (req, res) => {
