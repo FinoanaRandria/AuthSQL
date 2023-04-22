@@ -1,39 +1,26 @@
 const mysql = require("mysql");
 
-const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "NodeTest",
-});
+const auto_detect_bd = ()=>{
 
-
-
-  con.query("SELECT * FROM user ", (err, result) => {
-
-        data = result
-       
-   }
-   
- );
-
-
-
-
-con.connect((err) => {
-  if (err) throw err;
-
-  console.log("Connexion BD SQL reussie!");
+ const cnx =  mysql?.createConnection?.({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "NodeTest",
+  });
  
-});
-
-module.exports = {
-  
-  
-  
-
-
-
-
+     if(cnx!= "undefined"){
+      return {
+         type: "Mysql",
+         connexion: cnx
+      }
+     }
 
 }
+
+
+module.exports =auto_detect_bd() ?? console.log('aucune connexion a la base de donne')
+
+
+  
+
