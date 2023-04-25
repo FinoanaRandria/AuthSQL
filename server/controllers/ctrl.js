@@ -4,9 +4,7 @@ const {ORM} = require('../models/Orm')
 var db = new ORM('user')
 
 
-db.recuperer('name,password','').then(data =>{
-   console.log(data);
-})
+
 
 
 //get 
@@ -25,8 +23,17 @@ exports.home = (req,res)=>{
 
 
 //post 
-exports.postLogin = (req,res)=>{
-     console.log(req.body);
+exports.postLogin = async (req,res)=>{
+     const data = req.body
+            console.log(data);
+    
+     const collect = await db.recuperer('name,password','')
+     
+        console.log(collect);
 
-     res.end()
+
+
+
+    res.end()
+        
 }
