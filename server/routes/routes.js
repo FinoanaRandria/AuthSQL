@@ -1,6 +1,6 @@
 const {Router} = require('express')
 const router = Router()
-const {login,register,home,postLogin} = require('../controllers/ctrl')
+const {login,register,home,postLogin,postRegister} = require('../controllers/auth.controller')
 
 //get 
 router.get('/',login)
@@ -10,8 +10,7 @@ router.get('/home',home)
 
 
 router.post('/post1',postLogin)
-
-
+router.post('/post2',postRegister)
 
 
 
